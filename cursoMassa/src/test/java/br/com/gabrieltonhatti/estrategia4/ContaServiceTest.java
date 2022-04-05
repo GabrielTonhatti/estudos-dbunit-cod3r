@@ -55,9 +55,9 @@ public class ContaServiceTest {
                 .createStatement()
                 .executeUpdate(
                         "INSERT INTO contas (id, nome, usuario_id) " +
-                                "VALUES (1, 'Contra para testes', 1)"
+                                "VALUES (1, 'Conta para testes', 1)"
                 );
-        Conta contaTeste = service.findByName("Contra para testes");
+        Conta contaTeste = service.findByName("Conta para testes");
         contaTeste.setNome("Conta alterada");
         Conta contaAlterada = service.salvar(contaTeste);
         assertEquals("Conta alterada", contaAlterada.getNome());
@@ -71,10 +71,10 @@ public class ContaServiceTest {
                 .createStatement()
                 .executeUpdate(
                         "INSERT INTO contas (id, nome, usuario_id) " +
-                                "VALUES (1, 'Contra para testes', 1)"
+                                "VALUES (1, 'Conta para testes', 1)"
                 );
         Conta contaBuscada = service.findById(1L);
-        assertEquals("Contra para testes", contaBuscada.getNome());
+        assertEquals("Conta para testes", contaBuscada.getNome());
     }
 
     @Test
@@ -84,9 +84,9 @@ public class ContaServiceTest {
                 .createStatement()
                 .executeUpdate(
                         "INSERT INTO contas (id, nome, usuario_id) " +
-                                "VALUES (1, 'Contra para testes', 1)"
+                                "VALUES (1, 'Conta para testes', 1)"
                 );
-        Conta contaTeste = service.findByName("Contra para testes");
+        Conta contaTeste = service.findByName("Conta para testes");
         service.printAll();
         service.delete(contaTeste);
         Conta contaBuscada = service.findById(contaTeste.getId());
